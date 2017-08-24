@@ -1,0 +1,18 @@
+{
+    "rutas":[
+        {
+            "id": "1",
+            "nombre": "Villa Salome"
+        }
+    ],
+    "rutas-data":{
+        "1":{
+            "buses":{
+                "id": "1",
+                "chofer": "Carlos Torrez",
+                "lat": "-16.499",
+                "lng": "-68.1462"
+            }
+        }
+    }
+}

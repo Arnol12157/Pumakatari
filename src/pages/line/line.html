@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Rutas</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="secondary">
+    <ion-title>Elige la ruta que deseas buscar</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card (click)="goToMap(ruta.id,ruta.ruta)" *ngFor="let ruta of rutas | async">
+    <img src="../../assets/img/cards1.jpg"/>
+    <div class="card-title">Ruta</div>
+    <div class="card-subtitle">{{ruta.ruta}}</div>
+  </ion-card>
+</ion-content>

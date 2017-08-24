@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title *ngIf="rutaParameters">Linea {{ rutaParameters.nombre }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+  <sebm-google-map *ngIf="userLocation" [latitude]="userLocation.lat" [longitude]="userLocation.lng" [zoom]="userLocation.zoom">
+    
+    <sebm-google-map-marker *ngFor="let bus of buses | async" [latitude]="bus.lat" [longitude]="bus.lng" [iconUrl]="imageLocation">
+      <sebm-google-map-info-window [disableAutoPan]="true" *ngIf="rutaParameters">
+         Bus Pumakatari de la ruta <strong> {{ rutaParameters.nombre }} </strong>
+       </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+
+    <sebm-google-map-marker [latitude]="userLocation.lat" [longitude]="userLocation.lng" [iconUrl]="userLocation.pathImageLocation">
+      <sebm-google-map-info-window [disableAutoPan]="true">
+         Usted esta <strong> Aqui </strong>
+       </sebm-google-map-info-window>
+    </sebm-google-map-marker>
+
+  </sebm-google-map>
+  
+</ion-content>
